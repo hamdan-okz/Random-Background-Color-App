@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Color App</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #colorCode {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button onclick="changeColor()">Change Background</button>
+        <div id="colorCode">Color: #ffffff</div>
+    </div>
+
+    <script>
+        function changeColor() {
+            // Generate random color
+            const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+            // Apply background color
+            document.body.style.background = randomColor;
+
+            // Show color code
+            document.getElementById("colorCode").innerText = "Color: " + randomColor;
+        }
+    </script>
+
+</body>
+</html>
